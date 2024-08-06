@@ -17,12 +17,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
+            <!-- To Do List -->
             <RowDefinition Height="10"/>
             <RowDefinition Height="75"/>
+            <!-- TextBox -->
             <RowDefinition Height="10"/>
             <RowDefinition Height="50"/>
+            <!-- Button -->
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
+        <Button Click="AddToDoButton_Click" Grid.Row="5" Grid.Column="1" Content="Create ToDO"/>
+        <TextBox x:Name="TodoInput"  Grid.Row="3" Grid.Column="1" Background="#FFF1F1F1" />
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="TodoList">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Purple" Offset="1"/>
+                        <GradientStop Color="#FF1F57C5" Offset="0"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

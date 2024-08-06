@@ -20,5 +20,27 @@ namespace TodoAppWPF
         {
             InitializeComponent();
         }
+
+        private void AddToDoButton_Click(object sender, RoutedEventArgs e)
+        {
+            string todoText = TodoInput.Text;
+
+            if (string.IsNullOrWhiteSpace(todoText))
+            {
+                MessageBox.Show("Please enter a To Do item");
+                return;
+            }else
+            {
+                TextBlock todoItem = new TextBlock
+                {
+                    Text = todoText, 
+                    Margin = new Thickness(10),
+                    Foreground = new SolidColorBrush(Colors.AliceBlue)
+                };
+
+                TodoList.Children.Add(todoItem);
+                TodoInput.Clear();
+            }
+        }
     }
 }
